@@ -1,9 +1,9 @@
 package fr.uvsq.florianldm;
 
 public class Employe {
-    String nom;
-    int salaire = 1500;
-    int anciennete;
+    private String nom;
+    private int salaire = 1500;
+    private int anciennete;
 
     public Employe(String nom, int anciennete){
         this.nom = nom;
@@ -23,6 +23,6 @@ public class Employe {
     }
 
      public int calculSalaire(){
-        return this.salaire * this.anciennete;
+        return this.salaire + (20 * this.anciennete);
      }
 }

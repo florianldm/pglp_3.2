@@ -16,6 +16,6 @@ public class EmployeTest {
 
     @Test
     public void testSalaire(){
-        Assert.assertTrue(E.calculSalaire() == 15 * E.salaire);
+        Assert.assertTrue(E.calculSalaire() == 15 * 20 + E.getSalaire());
     }
 }
