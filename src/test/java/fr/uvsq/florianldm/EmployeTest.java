@@ -5,14 +5,14 @@ import org.junit.Test;
 
 public class EmployeTest {
     /** Employe. */
-    Employe E;
+    Employe e;
 
     /**
      * Initialisation employe.
      */
     @Before
     public void initEmploye() {
-        E = new Employe("Edouard", 15);
+        e = new Employe("Edouard", 15);
     }
 
     /**
@@ -20,7 +20,7 @@ public class EmployeTest {
      */
     @Test
     public void testInstance() {
-        Assert.assertTrue(E.getNom().equals("Edouard") && E.getAnciennete() == 15);
+        Assert.assertTrue(e.getNom().equals("Edouard") && e.getAnciennete() == 15);
     }
 
     /**
@@ -28,6 +28,6 @@ public class EmployeTest {
      */
     @Test
     public void testSalaire() {
-        Assert.assertTrue(E.calculSalaire() == 15 * 20 + E.getSalaire());
+        Assert.assertTrue(e.calculSalaire() == 15 * 20 + e.getSalaire());
     }
 }

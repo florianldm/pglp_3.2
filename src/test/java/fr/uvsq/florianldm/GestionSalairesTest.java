@@ -6,19 +6,19 @@ import org.junit.Test;
 
 public class GestionSalairesTest {
     /** Init. */
-    GestionSalaires G;
+    GestionSalaires g;
 
     /**
      * Initialisation liste d'employes.
      */
     @Before
     public void initListEmploye() {
-        G = new GestionSalaires();
-        Employe E = new Employe("Jean",10);
-        Vendeur V = new Vendeur("Paul", 5);
-        V.setCommission(200);
-        G.ajoutEmployeEntreprise(E);
-        G.ajoutEmployeEntreprise(V);
+        g = new GestionSalaires();
+        Employe e = new Employe("Jean",10);
+        Vendeur v = new Vendeur("Paul", 5);
+        v.setCommission(200);
+        g.ajoutEmployeEntreprise(e);
+        g.ajoutEmployeEntreprise(v);
     }
 
     /**
@@ -26,7 +26,7 @@ public class GestionSalairesTest {
      */
     @Test
     public void testSalaires() {
-        int salaire = G.calculSalairesEntreprise();
+        int salaire = g.calculSalairesEntreprise();
         Assert.assertEquals(salaire, 3500);
     }
 
