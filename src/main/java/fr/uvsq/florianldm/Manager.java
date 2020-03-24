@@ -2,26 +2,44 @@ package fr.uvsq.florianldm;
 
 import java.util.ArrayList;
 
-public class Manager extends Employe{
-    private ArrayList<Employe> Employes_geres; //Liste des employés qu'il gère
+public class Manager extends Employe {
+    /**Liste des employés qu'il gère.*/
+    private ArrayList<Employe> employesgeres;
 
-    public Manager(String nom, int anciennete){
-        super(nom,anciennete);
-        Employes_geres = new ArrayList<Employe>();
+    /**
+     * Constructeur.
+     * @param nom manager.
+     * @param anciennete manager.
+     */
+    public Manager(final String nom, final int anciennete) {
+        super(nom, anciennete);
+        employesgeres = new ArrayList<Employe>();
     }
 
-    public void ajoutEmploye(Employe E){
-        Employes_geres.add(E);
+    /**
+     * Ajout employe sous la direction.
+     * @param e Employe.
+     */
+    public void ajoutEmploye(final Employe e) {
+        employesgeres.add(e);
     }
 
-    public int getNombreEmployes(){
+    /**
+     * getter.
+     * @return nombre employes gérés.
+     */
+    public int getNombreEmployes() {
         int cpt = 0;
-        for(Employe E : Employes_geres){
+        for (Employe e : employesgeres) {
             cpt++;
         }
         return cpt;
     }
 
+    /**
+     * Calcul du salaire manager.
+     * @return salaire calculé.
+     */
     @Override
     public int calculSalaire() {
         return (this.getSalaire() + 20 * this.getAnciennete()) + 100 * this.getNombreEmployes();

@@ -1,21 +1,32 @@
 package fr.uvsq.florianldm;
-
 import java.util.ArrayList;
 
 public class GestionSalaires {
-    private ArrayList<Employe> liste_employes;
+    /**Liste employes.*/
+    private ArrayList<Employe> listeemployes;
 
-    public GestionSalaires(){
-        liste_employes = new ArrayList<Employe>();
+    /**
+     * Constructeur.
+     */
+    public GestionSalaires() {
+        listeemployes = new ArrayList<Employe>();
     }
 
-    public void ajoutEmployeEntreprise(Employe E){
-        liste_employes.add(E);
+    /**
+     * Ajouter un employe dans la liste.
+     * @param e employe a ajouter.
+     */
+    public void ajoutEmployeEntreprise(final Employe e) {
+        listeemployes.add(e);
     }
 
-    public int calculSalairesEntreprise(){
+    /**
+     * Parcours de la liste et calcul total des salaires.
+     * @return salaire total.
+     */
+    public int calculSalairesEntreprise() {
         int salairetotal = 0;
-        for(Employe E : liste_employes){
+        for (Employe E : listeemployes) {
             salairetotal += E.calculSalaire();
         }
         return salairetotal;
